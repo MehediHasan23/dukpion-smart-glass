@@ -7,7 +7,8 @@ import {
 } from "react-router-dom";
 import AuthProvider from './Contexts/AuthProvider';
 import Home from './Pages/Home/Home/Home';
-import Navigation from './Pages/Home/Navigation/Navigation';
+import Footer from './Pages/Shared/Footer/Footer';
+import Navigation from './Pages/Shared/Navigation/Navigation';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <Home/>
             </Route>
           </Switch>
+          <Footer/>
         </Router>
       </AuthProvider>
     </div>
