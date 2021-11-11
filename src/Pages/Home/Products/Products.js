@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Spinner } from "react-bootstrap";
+import useAuth from "../../../Hooks/useAuth";
 import Product from "../Product/Product";
 
 const Products = () => {
@@ -9,6 +10,17 @@ const Products = () => {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
+  const { loading } = useAuth();
+  
+  if (loading) {
+    return (
+      <div className="text-center my-5 py-5">
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      </div>
+    );
+  }
 
   return (
     <Container className='mt-5'>

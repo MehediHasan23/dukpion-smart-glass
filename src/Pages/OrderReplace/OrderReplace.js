@@ -30,7 +30,7 @@ const OrderReplace = () => {
   const onSubmit = (data) => {
     data.status = "pending";
     delete data._id;
-    fetch("http://localhost:5000/orders", {
+    fetch("http://localhost:5000/allOrder", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -100,7 +100,7 @@ const OrderReplace = () => {
               <input
                 className="p-2 m-2 w-50"
                 defaultValue={products?.name}
-                {...register("package_name")}
+                {...register("product_name")}
               />
 
               <input

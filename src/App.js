@@ -10,6 +10,9 @@ import Login from "./Pages/Login/Login/Login";
 import Registration from "./Pages/Login/Registration/Registration";
 import OrderReplace from "./Pages/OrderReplace/OrderReplace";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
+import DashBoard from "./Pages/DashBoard/DashBoard/DashBoard";
+import MyOrders from "./Pages/DashBoard/MyOrders/MyOrders";
+import ManageOrder from "./Pages/DashBoard/ManageOrder/ManageOrder";
 
 function App() {
   return (
@@ -21,22 +24,26 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route exact path="/home">
+            <Route  path="/home">
               <Home />
             </Route>
-            <Route exact path="/explorer">
+            <Route path="/explorer">
               <Explorer />
             </Route>
 
             <PrivateRoute exact path="/orderReplace/:id">
               <OrderReplace />
             </PrivateRoute>
-            <Route exact path="/login">
+            <Route  path="/login">
               <Login />
             </Route>
-            <Route exact path="/registration">
+            <Route  path="/registration">
               <Registration />
             </Route>
+            <Route  path="/dashboard">
+              <DashBoard />
+            </Route>
+            
           </Switch>
           <Footer />
         </Router>
