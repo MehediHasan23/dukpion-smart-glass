@@ -35,8 +35,8 @@ const Product = (props) => {
               <sup className="fs-6">$</sup> {price}
             </span>
           </div>
-          <p className='fw-bold'>SIZE: {category}</p>
-          <Link to={`/order/${_id}`}>
+          <p className=" text-muted">Size: {category}</p>
+          <Link to={`/orderReplace/${_id}`}>
             <Button className="btn btn-primary w-100 fw-bold">
               Add to Cart
             </Button>

@@ -10,7 +10,7 @@ const Banner = () => {
           <p className="text-white mt-3 text-center mb-5">
             Everything you want to know about the Bangladesh Film School
           </p>
-          <NavLink to="" className="mt-3 regular-btn">
+          <NavLink to="/explorer" className="mt-3 regular-btn">
             Explorer More
           </NavLink>
         </div>

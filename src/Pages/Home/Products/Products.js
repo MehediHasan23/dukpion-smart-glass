@@ -14,7 +14,7 @@ const Products = () => {
     <Container className='mt-5'>
       <div>
         <h1 className="text-center fw-bold mb-5">
-          <span className="text-success">OUR</span> PRODUCTS
+          <span className="text-info">OUR</span> PRODUCTS
         </h1>
       </div>
 
