@@ -6,9 +6,9 @@ import Product from '../Product/Product';
 const Explorer = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/products")
-      .then(res => res.json())
-    .then(data=> setProducts(data))
+    fetch("https://boiling-caverns-07920.herokuapp.com/products")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
   }, [])
   
   const { loading } = useAuth();

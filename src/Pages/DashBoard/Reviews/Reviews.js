@@ -12,7 +12,7 @@ const Reviews = () => {
     
   } = useForm();
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://boiling-caverns-07920.herokuapp.com/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -22,8 +22,8 @@ const Reviews = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          alert('review added successfully')
-          reset()
+          alert("review added successfully");
+          reset();
         }
       });
   }

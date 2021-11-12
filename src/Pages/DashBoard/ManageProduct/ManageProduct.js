@@ -6,7 +6,7 @@ import { Table } from "react-bootstrap";
 const ManageProduct = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://boiling-caverns-07920.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -16,7 +16,7 @@ const ManageProduct = () => {
   const deleteProduct = (id) => {
     const proceed = window.confirm("you want to sure to delete");
     if (proceed) {
-      const url = `http://localhost:5000/products/${id}`
+      const url = `https://boiling-caverns-07920.herokuapp.com/products/${id}`;
       fetch(url, {
         method: "DELETE",
       })

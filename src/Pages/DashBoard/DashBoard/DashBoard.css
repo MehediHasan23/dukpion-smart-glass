@@ -1,15 +1,19 @@
-.admin-area {
-  background: coral;
-  color: white;
-  height: 100vh;
-}
-/* .admin-container {
-  overflow-x: hidden;
-} */
-/* .admin-menu {
+.list li {
   list-style: none;
-  cursor: pointer;
-} */
-.admin-menu:hover {
-  color: blue;
+  margin-top: 10px;
+}
+
+.list a {
+  text-decoration: none;
+  text-align: start;
+  color: rgb(255, 255, 255);
+}
+
+.list a :hover {
+  background-color: rgb(40, 85, 87);
+  color: rgb(235, 227, 227);
+}
+.list {
+  background-color: rgb(10, 138, 155);
+  height: 100vh;
 }

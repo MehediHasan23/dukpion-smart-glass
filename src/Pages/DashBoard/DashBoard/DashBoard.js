@@ -9,7 +9,10 @@ import MakeAdmin from "./../MakeAdmin/MakeAdmin";
 import AddProduct from "../AddProduct/AddProduct";
 import ManageProduct from "../ManageProduct/ManageProduct";
 import useAuth from "../../../Hooks/useAuth";
-import AdminRoute from './../../Login/AdminRoute/AdminRoute'
+import AdminRoute from "./../../Login/AdminRoute/AdminRoute";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCoffee, faCreditCard, faShoppingCart, faStar, faStarHalf } from "@fortawesome/free-solid-svg-icons";
+import { faAmazon } from "@fortawesome/free-brands-svg-icons";
 const DashBoard = () => {
   let { path, url } = useRouteMatch();
   const { admin } = useAuth();
@@ -17,30 +20,36 @@ const DashBoard = () => {
     <>
       <div className="container-fluid">
         <div className="row">
-          <div className="col-md-2">
-            <h5>User Dashboard</h5>
-
+          <div className="col-md-2 list">
             <Link to={`${url}`}>
-              <li> Payment</li>
+              <li className="fs-5">
+                <FontAwesomeIcon className="mx-1" icon={faCreditCard} />
+                Payment
+              </li>
             </Link>
 
             <Link to={`${url}/myOrder`}>
-              <li>My Order</li>
+              <li className="fs-5">
+                <FontAwesomeIcon className="mx-1" icon={faShoppingCart} />
+                My Order
+              </li>
             </Link>
 
             <Link to={`${url}/review`}>
-              <li>Review</li>
+              <li className="fs-5">
+                <FontAwesomeIcon className="mx-1" icon={faStar} />
+                Review
+              </li>
             </Link>
 
             {admin && (
-              <div className="admin-menu">
-                <h5>Admin Dashboard</h5>
+              <>
                 <Link to={`${url}/manageOrders`}>
                   <li>Manage Orders</li>
                 </Link>
 
                 <Link to={`${url}/manageProduct`}>
-                  <li>Manage Product</li>
+                  <li> Manage Product</li>
                 </Link>
                 <Link to={`${url}/addProduct`}>
                   <li>Add Product</li>
@@ -49,11 +58,11 @@ const DashBoard = () => {
                 <Link to={`${url}/makeAdmin`}>
                   <li>Make Admin</li>
                 </Link>
-              </div>
+              </>
             )}
           </div>
 
-          <div className="col-md-10">
+          <div className="col-md-10 bg-light">
             <Switch>
               <Route exact path={path}>
                 <Payment />

@@ -10,7 +10,7 @@ const MyOrders = () => {
 
   const [lists, setLists] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/allOrder/${email}`)
+    fetch(`https://boiling-caverns-07920.herokuapp.com/allOrder/${email}`)
       .then((res) => res.json())
       .then((data) => setLists(data));
   }, [email]);
@@ -21,7 +21,7 @@ const MyOrders = () => {
    const deleteId = (id) => {
      const proceed = window.confirm("you want to sure to delete");
      if (proceed) {
-       const url = `http://localhost:5000/allOrder/${id}`;
+       const url = `https://boiling-caverns-07920.herokuapp.com/allOrder/${id}`;
        fetch(url, {
          method: "DELETE",
        })

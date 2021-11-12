@@ -13,7 +13,7 @@ const ManageOrder = () => {
 const [allOrders, setAllOrders] = useState([]);
 const [confirm, setConfirm] = useState(true);
 useEffect(() => {
-  fetch("http://localhost:5000/allOrder")
+  fetch("https://boiling-caverns-07920.herokuapp.com/allOrder")
     .then((res) => res.json())
     .then((data) => setAllOrders(data));
 }, [confirm]);
@@ -23,7 +23,7 @@ useEffect(() => {
 const deleteId = (id) => {
   const proceed = window.confirm("you want to sure to delete");
   if (proceed) {
-    const url = `http://localhost:5000/allOrder/${id}`;
+    const url = `https://boiling-caverns-07920.herokuapp.com/allOrder/${id}`;
     fetch(url, {
       method: "DELETE",
     })
@@ -44,7 +44,7 @@ const deleteId = (id) => {
   const confirmID = (id) => {
     const confirm = window.confirm("wanna confirm ?");
     if (confirm) {
-      fetch(`http://localhost:5000/allOrder/${id}`, {
+      fetch(`https://boiling-caverns-07920.herokuapp.com/allOrder/${id}`, {
         method: "PUT",
       })
         .then((res) => res.json())
