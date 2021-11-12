@@ -5,7 +5,7 @@ import useAuth from "../../../Hooks/useAuth";
 const Registration = () => {
   const { handleName, handelPass, handelEmail, registerProcess, error } =
     useAuth();
-  const history = useHistory()
+  const history = useHistory();
   return (
     <div className="container-fluid my-5">
       <Container>
@@ -25,7 +25,12 @@ const Registration = () => {
         <p className="text-danger text-center">{error}</p>
 
         <div className="text-center mt-5">
-          <form onSubmit={registerProcess}>
+          <form
+            onSubmit={(e) => {
+              registerProcess(history);
+              e.preventDefault();
+            }}
+          >
             <input
               type="text"
               placeholder="Your Name"
@@ -68,24 +73,3 @@ const Registration = () => {
 
 export default Registration;
 
-/* const [loginData, setLoginData] = useState({});
-
-const { registerUser } = useAuth();
-const handelOnBlur = (e) => {
-  const field = e.target.name;
-  const value = e.target.value;
-  const newLoginData = { ...loginData };
-  newLoginData[field] = value;
-  console.log(newLoginData);
-  setLoginData(newLoginData);
-};
-
-const handelLogin = (e) => {
-  if (loginData.password !== loginData.password2) {
-    alert("password did not matched");
-    return;
-  }
-  registerUser(loginData.email, loginData.name, loginData.password);
-  e.preventDefault();
-};
- */

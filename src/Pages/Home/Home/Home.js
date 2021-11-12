@@ -8,7 +8,7 @@ const Home = () => {
     <div>
       <Banner />
       <Products />
-      <Review/>
+      <Review />
     </div>
   );
 };
@@ -22,7 +22,14 @@ export default Home;
     img: "https://img-for-json.netlify.app/images/1.png",
     rating: "4.5",
     ratingCount: 509,
-    category: "Rectangle",
+    variant: "Rectangle",
+    modelNumber: "DKE04558",
+    frameMaterial: "High quality Metal & Fiber",
+    Size: "53-18-145 mm",
+    FrameAttribution: "High Quality, Flexible & Durable",
+    desc: "Eyeglasses Frame or Prescription Optical Frame",
+    lensFunction:
+      "UV400, Anti Reflection,Anti Blue Ray & more functions depending on Lens types",
   },
   {
     name: "Full Transparent Eyeglass",
@@ -30,7 +37,14 @@ export default Home;
     img: "https://img-for-json.netlify.app/images/2.jpg",
     rating: "4.3",
     ratingCount: 280,
-    category: "Rectangle",
+    variant: "Rectangle",
+    modelNumber: "DKE04466",
+    frameMaterial: "High quality Metal & Fiber",
+    Size: "45-22-142 mm",
+    frameAttribution: "High Quality, Flexible & Durable",
+    desc: "Eyeglasses Frame or Prescription Optical Frame",
+    lensFunction:
+      "UV400, Anti Reflection,Anti Blue Ray & more functions depending on Lens types",
   },
   {
     name: "Semi Oval Ass Men Frame",
@@ -38,7 +52,14 @@ export default Home;
     img: "https://img-for-json.netlify.app/images/3.jpg",
     rating: "4.5",
     ratingCount: 1033,
-    category: "Oval",
+    variant: "Oval",
+    modelNumber: "DKE04453",
+    frameMaterial: "High quality Metal & Fiber",
+    Size: "52-16-140 mm",
+    frameAttribution: "High Quality, Flexible & Durable",
+    desc: "Eyeglasses Frame or Prescription Optical Frame",
+    lensFunction:
+      "UV400, Anti Reflection,Anti Blue Ray & more functions depending on Lens types",
   },
   {
     name: "All Time Hit Fashion Eyeware",
@@ -46,15 +67,29 @@ export default Home;
     img: "https://img-for-json.netlify.app/images/4.png",
     rating: "3.5",
     ratingCount: 1209,
-    category: "Oval",
+    variant: "Oval",
+    modelNumber: "DKS04653",
+    frameMaterial: "High quality Metal & Fiber",
+    Size: "54-19-137 mm",
+    frameAttribution: "High Quality, Flexible & Durable",
+    desc: "Eyeglasses Frame or Prescription Optical Frame",
+    lensFunction:
+      "UV400, Anti Reflection,Anti Blue Ray & more functions depending on Lens types",
   },
   {
-    name: "Cat Eye Eyeglass For Lady",
+    name: "Cat Eyeglass For Lady",
     price: "1656",
     img: "https://img-for-json.netlify.app/images/5.png",
     rating: "4.5",
     ratingCount: 3100,
-    category: "CATEYE",
+    variant: "CATEYE",
+    modelNumber: "DKE04048",
+    frameMaterial: "High quality Metal & Fiber",
+    Size: "53-17-138 mm",
+    frameAttribution: "High Quality, Flexible & Durable",
+    desc: "Eyeglasses Frame or Prescription Optical Frame",
+    lensFunction:
+      "UV400, Anti Reflection,Anti Blue Ray & more functions depending on Lens types",
   },
   {
     name: "Transparent Women Eyeglass ",
@@ -62,7 +97,14 @@ export default Home;
     img: "https://img-for-json.netlify.app/images/6.png",
     rating: "5",
     ratingCount: 970,
-    category: "CATEYE",
+    variant: "CATEYE",
+    modelNumber: "DKE02808",
+    frameMaterial: "High quality Metal & Fiber",
+    Size: "54-19-137 mm",
+    frameAttribution: "High Quality, Flexible & Durable",
+    desc: "Eyeglasses Frame or Prescription Optical Frame",
+    lensFunction:
+      "UV400, Anti Reflection,Anti Blue Ray & more functions depending on Lens types",
   },
   {
     name: "FASHION Sunglass ",
@@ -70,7 +112,14 @@ export default Home;
     img: "https://img-for-json.netlify.app/images/7.png",
     rating: "3.5",
     ratingCount: 780,
-    category: "GRADIENT",
+    variant: "GRADIENT",
+    modelNumber: "DKE04686",
+    frameMaterial: "High quality Metal & Fiber",
+    Size: "58-18-148 mm",
+    frameAttribution: "High Quality, Flexible & Durable",
+    desc: "Eyeglasses Frame or Prescription Optical Frame",
+    lensFunction:
+      "UV400, Anti Reflection,Anti Blue Ray & more functions depending on Lens types",
   },
   {
     name: "Stylish Yellow Sunglass ",
@@ -78,7 +127,14 @@ export default Home;
     img: "https://img-for-json.netlify.app/images/8.png",
     rating: "4.5",
     ratingCount: 990,
-    category: "POLARIZED",
+    variant: "POLARIZED",
+    modelNumber: "DKE02226",
+    frameMaterial: "High quality Metal & Fiber",
+    Size: "45-16-130 mm",
+    frameAttribution: "High Quality, Flexible & Durable",
+    desc: "Eyeglasses Frame or Prescription Optical Frame",
+    lensFunction:
+      "UV400, Anti Reflection,Anti Blue Ray & more functions depending on Lens types",
   },
   {
     name: "Coolest SunGlasses ",
@@ -86,7 +142,14 @@ export default Home;
     img: "https://img-for-json.netlify.app/images/9.png",
     rating: "5",
     ratingCount: 1350,
-    category: "POLARIZED",
+    variant: "POLARIZED",
+    modelNumber: "DKS04487",
+    frameMaterial: "High quality Metal & Fiber",
+    Size: "43-18-120 mm",
+    frameAttribution: "High Quality, Flexible & Durable",
+    desc: "Eyeglasses Frame or Prescription Optical Frame",
+    lensFunction:
+      "UV400, Anti Reflection,Anti Blue Ray & more functions depending on Lens types",
   },
   {
     name: "Pilot Shade Men's Sunglass ",
@@ -94,7 +157,14 @@ export default Home;
     img: "https://img-for-json.netlify.app/images/10.png",
     rating: "4.2",
     ratingCount: 1580,
-    category: "PILOT",
+    variant: "PILOT",
+    modelNumber: "DK02864",
+    frameMaterial: "High quality Metal & Fiber",
+    Size: "59-13-140 mm",
+    frameAttribution: "High Quality, Flexible & Durable",
+    desc: "Eyeglasses Frame or Prescription Optical Frame",
+    lensFunction:
+      "UV400, Anti Reflection,Anti Blue Ray & more functions depending on Lens types",
   },
   {
     name: "Pilot Shade Men's Sunglass ",
@@ -102,7 +172,14 @@ export default Home;
     img: "https://img-for-json.netlify.app/images/11.png",
     rating: "4.2",
     ratingCount: 770,
-    category: "PILOT",
+    variant: "PILOT",
+    modelNumber: "DK00210",
+    frameMaterial: "High quality Metal & Fiber",
+    Size: "62-10-135 mm",
+    frameAttribution: "High Quality, Flexible & Durable",
+    desc: "Eyeglasses Frame or Prescription Optical Frame",
+    lensFunction:
+      "UV400, Anti Reflection,Anti Blue Ray & more functions depending on Lens types",
   },
   {
     name: "Premium Pilot Sunglass ",
@@ -110,7 +187,14 @@ export default Home;
     img: "https://img-for-json.netlify.app/images/12.png",
     rating: "4.8",
     ratingCount: 990,
-    category: "PILOT",
+    variant: "PILOT",
+    modelNumber: "DKE02243",
+    frameMaterial: "High quality Metal & Fiber",
+    Size: "47-16-128 mm",
+    frameAttribution: "High Quality, Flexible & Durable",
+    desc: "Eyeglasses Frame or Prescription Optical Frame",
+    lensFunction:
+      "UV400, Anti Reflection,Anti Blue Ray & more functions depending on Lens types",
   },
   {
     name: "Retro Polarized Sunglasses ",
@@ -118,7 +202,14 @@ export default Home;
     img: "https://img-for-json.netlify.app/images/13.png",
     rating: "4.5",
     ratingCount: 1190,
-    category: "PREMIUM",
+    variant: "PREMIUM",
+    modelNumber: "DKS04693",
+    frameMaterial: "High quality Metal & Fiber",
+    Size: "60-15-146 mm",
+    frameAttribution: "High Quality, Flexible & Durable",
+    desc: "Eyeglasses Frame or Prescription Optical Frame",
+    lensFunction:
+      "UV400, Anti Reflection,Anti Blue Ray & more functions depending on Lens types",
   },
   {
     name: "Clubmaster Lady Sunglass ",
@@ -126,6 +217,14 @@ export default Home;
     img: "https://img-for-json.netlify.app/images/14.png",
     rating: "5",
     ratingCount: 506,
-    category: "CLUBMASTER",
+    variant: "CLUBMASTER",
+    modelNumber: "DKE03279",
+    frameMaterial: "High quality Metal & Fiber",
+    Size: "52-18-140 mm",
+    frameAttribution: "High Quality, Flexible & Durable",
+    desc: "Eyeglasses Frame or Prescription Optical Frame",
+    lensFunction:
+      "UV400, Anti Reflection,Anti Blue Ray & more functions depending on Lens types",
   },
-]; */
+];
+ */
