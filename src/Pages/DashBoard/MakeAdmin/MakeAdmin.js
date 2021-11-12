@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
+import Swal from "sweetalert2";
 
 const MakeAdmin = () => {
-  const [email, setEmail] = useState('')
-  const [successful, setSuccessFul] = useState(false)
-  const emailField = e => {
+  const [email, setEmail] = useState("");
+  const [successful, setSuccessFul] = useState(false);
+  const emailField = (e) => {
     setEmail(e.target.value);
-  }
-  const handelAdmin = e => {
-    const user = { email }
+    
+  };
+  const handelAdmin = (e) => {
+    const user = { email };
     fetch("http://localhost:5000/users/admin", {
       method: "PUT",
       headers: {
@@ -18,10 +20,13 @@ const MakeAdmin = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        if (data.modifiedCount === 1) {
+          Swal.fire("admin made successfully");
+          setSuccessFul(true);
+        }
       });
-    e.preventDefault()
-  }
+    e.preventDefault();
+  };
   return (
     <Container>
       <div className="text-center mt-5">

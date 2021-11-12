@@ -8,17 +8,13 @@ import { Link } from "react-router-dom";
 import Rating from "react-rating";
 const Product = (props) => {
   // console.log(props);
-  const { name, img, rating, ratingCount, category, price, _id } =
-    props.product;
+  const { name, img, rating, ratingCount,modelNumber, variant, price, _id } = props.product;
   return (
     <div className="col-sm-12 col-md-6 col-lg-4">
-      <div
-        className="card mx-auto  border m-2"
-        style={{ width: "18rem" }}
-      >
+      <div className="card mx-auto  border m-2" style={{ width: "18rem" }}>
         <img src={img} className="card-img-top img-fluid " alt="..." />
         <div className="card-body text-start m-0">
-          <h5 className="card-title">{name}</h5>
+          <h5 className="card-title fw-bold text-muted">{name}</h5>
           <div className="text-start">
             <Rating
               readonly
@@ -31,11 +27,12 @@ const Product = (props) => {
             <span className="text-muted">( reviews {ratingCount})</span>
           </div>
           <div className="text-danger mt-3">
+            <p className=" text-muted">Model: {modelNumber}</p>
             <span className="fw-bold">
               <sup className="fs-6">$</sup> {price}
             </span>
           </div>
-          <p className=" text-muted">Size: {category}</p>
+          <p className=" text-muted">Variant: {variant}</p>
           <Link to={`/orderReplace/${_id}`}>
             <Button className="btn btn-primary w-100 fw-bold">
               Add to Cart

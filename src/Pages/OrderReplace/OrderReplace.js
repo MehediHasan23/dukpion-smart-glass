@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import Rating from "react-rating";
-import './OrderReplace.css'
+import Swal from "sweetalert2";
+import "./OrderReplace.css";
 import { useParams } from "react-router";
 import useAuth from "../../Hooks/useAuth";
 import { faStar as emptyStar } from "@fortawesome/free-regular-svg-icons";
@@ -40,7 +41,8 @@ const OrderReplace = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.insertedId) {
-          alert("order successfully taken");
+          Swal.fire("order successfully taken");
+
           reset();
         }
       });
@@ -69,8 +71,8 @@ const OrderReplace = () => {
                 </div>
                 <div className="col-md-8">
                   <div className="card-body text-center">
-                    <h5 className="card-title my-3">{products?.name}</h5>
-                    
+                    <h5 className="card-title ">{products?.name}</h5>
+
                     <div
                       className="text-center
                   "
@@ -87,7 +89,16 @@ const OrderReplace = () => {
                         ( {products?.ratingCount} reviews )
                       </span>
                     </div>
-                    <p className="card-text">size: {products?.category}</p>
+                    <p className="card-text m-0">
+                      Model: {products?.modelNumber}
+                    </p>
+                    <p className="card-text m-0">Size : {products?.Size}</p>
+                    <p className="card-text m-0">
+                      Frame Material: {products?.frameMaterial}.
+                    </p>
+
+                    <p className="card-text m-0">Usage: {products?.desc}.</p>
+
                     <h6>Price: {products?.price}</h6>
                   </div>
                 </div>
@@ -138,7 +149,7 @@ const OrderReplace = () => {
 
               <input
                 type="submit"
-                value='ORDER'
+                value="ORDER"
                 className="fw-bold text-muted p-2 m-2 w-50"
               />
             </form>
