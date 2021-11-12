@@ -4,7 +4,7 @@ import { Redirect, Route } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 
 const PrivateRoute = ({ children, ...rest }) => {
-  const {user, loading} = useAuth()
+  const { user, loading, admin } = useAuth();
   if (loading) {
     return (
       <div className="text-center my-5 py-5">
@@ -18,7 +18,7 @@ const PrivateRoute = ({ children, ...rest }) => {
     <Route
       {...rest}
       render={({ location }) =>
-        user?.email ? (
+        user?.displayName && admin ? (
           children
         ) : (
           <Redirect

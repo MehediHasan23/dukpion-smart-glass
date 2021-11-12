@@ -7,13 +7,13 @@ import { faStar as fullStar } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import Rating from "react-rating";
 const Product = (props) => {
-  console.log(props);
+  // console.log(props);
   const { name, img, rating, ratingCount, category, price, _id } =
     props.product;
   return (
     <div className="col-sm-12 col-md-6 col-lg-4">
       <div
-        className="card mx-auto className='mb-0' border m-2"
+        className="card mx-auto  border m-2"
         style={{ width: "18rem" }}
       >
         <img src={img} className="card-img-top img-fluid " alt="..." />

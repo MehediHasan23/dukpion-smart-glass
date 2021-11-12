@@ -25,10 +25,7 @@ const Registration = () => {
         <p className="text-danger text-center">{error}</p>
 
         <div className="text-center mt-5">
-          <form onSubmit={() => {
-            registerProcess()
-            history.replace('/home')
-          }}>
+          <form onSubmit={registerProcess}>
             <input
               type="text"
               placeholder="Your Name"

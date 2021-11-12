@@ -28,7 +28,7 @@ const MyOrders = () => {
          .then((res) => res.json())
          .then((data) => {
            if (data.deletedCount === 1) {
-             alert("delete successfully");
+             alert("Product deleted");
              const remaining = lists.filter((list) => list._id !== id);
              setLists(remaining);
            }

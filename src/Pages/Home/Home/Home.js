@@ -1,12 +1,14 @@
 import React from "react";
 import Banner from "../../Shared/Banner/Banner";
 import Products from "../Products/Products";
+import Review from "../Review/Review";
 
 const Home = () => {
   return (
     <div>
       <Banner />
       <Products />
+      <Review/>
     </div>
   );
 };
