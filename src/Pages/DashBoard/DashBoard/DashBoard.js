@@ -1,5 +1,9 @@
 import { faPaypal } from "@fortawesome/free-brands-svg-icons";
-import { faCreditCard, faSmileBeam, faStar } from "@fortawesome/free-regular-svg-icons";
+import {
+  faCreditCard,
+  faSmileBeam,
+  faStar,
+} from "@fortawesome/free-regular-svg-icons";
 import {
   faHome,
   faHouseUser,
@@ -50,7 +54,7 @@ const DashBoard = () => {
                     text-dark
                     fw-bold
                     border-0
-                    style={{ background: "#F97F51" }}
+                    style={{ background: "#556270" }}
                   >
                     <FontAwesomeIcon
                       icon={faUserLock}
@@ -118,7 +122,7 @@ const DashBoard = () => {
                   aria-controls="collapseTwo"
                   text-dark
                   fw-bold
-                  style={{ background: "#F97F51" }}
+                  style={{ background: "#556270" }}
                 >
                   <FontAwesomeIcon
                     icon={faUserCog}
@@ -180,25 +184,17 @@ const DashBoard = () => {
                 </div>
               </div>
             </div>
-            <div className="uses-btn rounded" style={{ background: "#F97F51" }}>
+            <div className="uses-btn rounded" style={{ background: "#556270" }}>
               <button
                 onClick={logOut}
-                className="text-decoration-none text-light fw-bold text-dark  btn "
+                className="text-decoration-none fs-4 text-white text-light fw-bold text-dark  btn "
               >
                 <FontAwesomeIcon
-                  className="fs-4 text-light"
+                  className="fs-5 text-light mx-1"
                   icon={faSignOutAlt}
                 ></FontAwesomeIcon>
+                Logout
               </button>
-              <Link
-                to="/"
-                className="text-decoration-none text-light text-dark fw-bold btn"
-              >
-                <FontAwesomeIcon
-                  className="fs-4 text-light"
-                  icon={faHouseUser}
-                ></FontAwesomeIcon>
-              </Link>
             </div>
           </div>
           {/* accordion */}

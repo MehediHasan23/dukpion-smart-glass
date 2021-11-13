@@ -23,7 +23,7 @@ const AddProduct = () => {
   };
   return (
     <div className=" add-container ">
-      <h3 className="text-center text-dark text-white fw-bold">ADD A SERVICE</h3>
+      <h3 className="text-center text-dark text-white fw-bold">Add A Product</h3>
       <div className="data-form">
         <form onSubmit={handleSubmit(onSubmit)}>
           {/* title */}

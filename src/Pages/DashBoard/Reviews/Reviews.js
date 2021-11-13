@@ -31,10 +31,10 @@ const Reviews = () => {
   }
   return (
     <div
-      className="container-fluid py-5"
-      style={{ backgroundColor: "#80d572" }}
+      className="container-fluid "
+     
     >
-      <h1 className="pt-5 fw-bold" style={{ color: "#163336" }}>
+      <h1 className="pt-5 fw-bold" >
         Give your Review
       </h1>
 
