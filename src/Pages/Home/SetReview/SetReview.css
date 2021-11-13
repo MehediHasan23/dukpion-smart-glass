@@ -3,5 +3,5 @@
   transition: all 0.9s;
 }
 .testimonial-card:hover {
-  box-shadow: 0 0 20px rgb(8, 8, 153);
+  box-shadow: 0 0 20px #00008b;
 }
