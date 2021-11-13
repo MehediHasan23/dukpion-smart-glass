@@ -3,7 +3,7 @@ import { useHistory, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import Slide from "react-reveal/Slide";
-
+import Swal from "sweetalert2";
 const Login = () => {
   const {
     loginProcess,
@@ -48,10 +48,17 @@ const Login = () => {
                     const user = result.user;
                     setUser(user);
                     setError("");
+                    Swal.fire("Login successful");
                     history.push(redirect);
                   })
                   .catch((error) => {
-                    setError(error.message);
+                    // setError(error.message);
+                    Swal.fire({
+                      icon: "error",
+                      title: "Oops...",
+                      text: "Wrong Password",
+                      footer: '<a href="">please give right password</a>',
+                    });
                   });
               }}
             >

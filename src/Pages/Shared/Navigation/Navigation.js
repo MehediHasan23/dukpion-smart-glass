@@ -85,13 +85,3 @@ export default Navigation;
   DASHBOARD
 </Nav.Link>;
 
-{
-  /* <Nav.Link className="fw-bold text-muted" as={Link} to="/registration">
-  <button
-    onClick={logOut}
-    className="btn btn-outline-secondary border-0 fw-bold"
-  >
-    LOGOUT
-  </button>
-</Nav.Link>; */
-}

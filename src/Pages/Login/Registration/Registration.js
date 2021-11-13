@@ -2,6 +2,7 @@ import { Container } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import Rotate from "react-reveal/Rotate";
+import Swal from "sweetalert2";
 
 const Registration = () => {
   const { handleName, handelPass, handelEmail, registerProcess, error } =
@@ -31,6 +32,13 @@ const Registration = () => {
               onSubmit={(e) => {
                 registerProcess(history);
                 e.preventDefault();
+                Swal.fire({
+                  position: "top-end",
+                  icon: "success",
+                  title: "Registration Successfully done",
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
               }}
             >
               <input
@@ -75,4 +83,3 @@ const Registration = () => {
 };
 
 export default Registration;
-
