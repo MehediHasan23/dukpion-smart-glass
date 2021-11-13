@@ -5,15 +5,18 @@ import KeepTouch from "../KeepTouch/KeepTouch";
 import Products from "../Products/Products";
 import Review from "../Review/Review";
 import Services from "../Services/Services";
+import FeaturedProducts from './../FeaturedProducts/FeaturedProducts'
 
 const Home = () => {
   return (
-    <div style={{ background: "#D8E8EB" }}>
-      <Banner />
-      <Products />
-      <Review />
+    <div >
+      {/* <Banner /> */}
+      <FeaturedProducts />
+
+      {/* <Products /> */}
+      {/* <Review /> */}
       {/* <AboutCollection /> */}
-      <KeepTouch/>
+      {/* <KeepTouch/> */}
       <Services />
     </div>
   );
