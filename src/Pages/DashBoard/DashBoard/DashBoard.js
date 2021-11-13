@@ -2,8 +2,10 @@ import { faPaypal } from "@fortawesome/free-brands-svg-icons";
 import { faCreditCard, faSmileBeam, faStar } from "@fortawesome/free-regular-svg-icons";
 import {
   faHome,
+  faHouseUser,
   faPlus,
   faShoppingCart,
+  faSignOutAlt,
   faStore,
   faTasks,
   faUserCog,
@@ -25,21 +27,21 @@ import AdminRoute from "./../../Login/AdminRoute/AdminRoute";
 
 const DashBoard = () => {
   let { path, url } = useRouteMatch();
-  const { admin } = useAuth();
+  const { admin, logOut } = useAuth();
   return (
-    <div className="container-fluid">
-      <div className="row">
+    <div className="container-fluid dashboard-container">
+      <div className="row ">
         <div
-          style={{ minHeight: "80vh" }}
-          className="col-sm-12 col-md-6 col-lg-2 bg-dark text-white pt-5"
+          style={{ minHeight: "80vh", marginTop: "80px" }}
+          className="col-sm-12 col-md-6 col-lg-2  text-white pt-5 "
         >
           {/* accordion */}
-          <div class="accordion" id="accordionExample">
+          <div className="accordion " id="accordionExample">
             {admin && (
-              <div class="accordion-item mt-3">
-                <h2 class="accordion-header" id="headingOne">
+              <div className="accordion-item mt-3">
+                <h2 className="accordion-header " id="headingOne">
                   <button
-                    class="accordion-button"
+                    className="accordion-button"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#collapseOne"
@@ -47,21 +49,23 @@ const DashBoard = () => {
                     aria-controls="collapseOne"
                     text-dark
                     fw-bold
+                    border-0
+                    style={{ background: "#F97F51" }}
                   >
                     <FontAwesomeIcon
                       icon={faUserLock}
-                      className="me-2 text-dark"
+                      className="me-2 text-light"
                     />{" "}
-                    <span className="text-dark fw-bold">Admin Panel</span>
+                    <span className="text-light fw-bold">Admin Panel</span>
                   </button>
                 </h2>
                 <div
                   id="collapseOne"
-                  class="accordion-collapse collapse show"
+                  className="accordion-collapse collapse show"
                   aria-labelledby="headingOne"
                   data-bs-parent="#accordionExample"
                 >
-                  <div class="accordion-body">
+                  <div className="accordion-body">
                     <Link
                       className="text-decoration-none text-dark fw-bold"
                       to={`${url}/manageAllOrders`}
@@ -103,10 +107,10 @@ const DashBoard = () => {
                 </div>
               </div>
             )}
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwo">
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="headingTwo">
                 <button
-                  class="accordion-button collapsed"
+                  className="accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseTwo"
@@ -114,16 +118,17 @@ const DashBoard = () => {
                   aria-controls="collapseTwo"
                   text-dark
                   fw-bold
+                  style={{ background: "#F97F51" }}
                 >
                   <FontAwesomeIcon
                     icon={faUserCog}
                     className="me-2 
                     fw-bold
-                    text-dark
+                    text-light
                   "
                   />{" "}
                   <span
-                    className="text-dark
+                    className="text-light
                   fw-bold"
                   >
                     User Panel
@@ -132,11 +137,11 @@ const DashBoard = () => {
               </h2>
               <div
                 id="collapseTwo"
-                class="accordion-collapse collapse"
+                className="accordion-collapse collapse"
                 aria-labelledby="headingTwo"
                 data-bs-parent="#accordionExample"
               >
-                <div class="accordion-body">
+                <div className="accordion-body">
                   <Link
                     className="text-decoration-none text-dark fw-bold"
                     to={`${url}`}
@@ -157,7 +162,6 @@ const DashBoard = () => {
                     <li style={{ listStyle: "none" }} className="text-start">
                       {" "}
                       <FontAwesomeIcon
-                        
                         icon={faCreditCard}
                       ></FontAwesomeIcon>{" "}
                       Payment{" "}
@@ -168,26 +172,40 @@ const DashBoard = () => {
                     className="text-decoration-none text-dark fw-bold"
                     to={`${url}/review`}
                   >
-                    <li
-                      className="text-start "
-                      style={{ listStyle: "none" }}
-                    >
-                      <FontAwesomeIcon
-                        
-                        icon={faStar}
-                      ></FontAwesomeIcon> 
-                       Review
+                    <li className="text-start " style={{ listStyle: "none" }}>
+                      <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                      Review
                     </li>
                   </Link>
                 </div>
               </div>
+            </div>
+            <div className="uses-btn rounded" style={{ background: "#F97F51" }}>
+              <button
+                onClick={logOut}
+                className="text-decoration-none text-light fw-bold text-dark  btn "
+              >
+                <FontAwesomeIcon
+                  className="fs-4 text-light"
+                  icon={faSignOutAlt}
+                ></FontAwesomeIcon>
+              </button>
+              <Link
+                to="/"
+                className="text-decoration-none text-light text-dark fw-bold btn"
+              >
+                <FontAwesomeIcon
+                  className="fs-4 text-light"
+                  icon={faHouseUser}
+                ></FontAwesomeIcon>
+              </Link>
             </div>
           </div>
           {/* accordion */}
         </div>
         <div
           style={{ minHeight: "80vh" }}
-          className="bg-order-list col-sm-12 col-md-6 col-lg-10 bg-secondary pt-5 text-white "
+          className="bg-order-list col-sm-12 col-md-6 col-lg-10 pt-5 text-white "
         >
           <Switch>
             <Route exact path={path}>

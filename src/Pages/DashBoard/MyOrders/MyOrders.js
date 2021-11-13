@@ -82,32 +82,33 @@ const MyOrders = () => {
                 {Array.from({ length: 1 }).map((_, index) => (
                   <td
                     style={{ textAlign: "center" }}
-                    className="fw-bold"
+                    className="fw-bold text-light"
+                    
                     key={index}
                   >
-                    <img className="w-25 rounded-pill" src={list.img} alt="" />
+                    {list.Name}
                   </td>
                 ))}
 
                 {Array.from({ length: 1 }).map((_, index) => (
-                  <td className="fw-bold text-white align-middle" key={index}>
+                  <td className="fw-bold text-white " key={index}>
                     {list?.name}
                   </td>
                 ))}
 
                 {Array.from({ length: 1 }).map((_, index) => (
-                  <td className="fw-bold text-white align-middle" key={index}>
+                  <td className="fw-bold text-white " key={index}>
                     {list?.price}
                   </td>
                 ))}
 
                 {Array.from({ length: 1 }).map((_, index) => (
-                  <td className="fw-bold text-white align-middle" key={index}>
+                  <td className="fw-bold text-white " key={index}>
                     {list?.status}
                   </td>
                 ))}
                 {Array.from({ length: 1 }).map((_, index) => (
-                  <td key={index} className="align-middle">
+                  <td key={index} className="">
                     <button
                       onClick={() => deleteId(list._id)}
                       className="mx-3 text-danger "

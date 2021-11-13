@@ -70,7 +70,7 @@ const ManageOrder = () => {
               {Array.from({ length: 1 }).map((_, index) => (
                 <th className="text-white" key={index}>
                   {" "}
-                  PRODUCT IMG{" "}
+                  PRODUCT ID{" "}
                 </th>
               ))}
 
@@ -101,7 +101,7 @@ const ManageOrder = () => {
             <tbody>
               <tr>
                 {Array.from({ length: 1 }).map((_, index) => (
-                  <td className="fw-bold text-white align-middle" key={index}>
+                  <td className="fw-bold text-white " key={index}>
                     {allOrder?.Name}
                   </td>
                 ))}
@@ -112,30 +112,26 @@ const ManageOrder = () => {
                   // </td>
                   <td
                     style={{ textAlign: "center" }}
-                    className="fw-bold"
+                    className="fw-bold text-white"
                     key={index}
                   >
-                    <img
-                      className="w-25 rounded-pill"
-                      src={allOrder?.img}
-                      alt=""
-                    />
+                    {allOrder._id}
                   </td>
                 ))}
 
                 {Array.from({ length: 1 }).map((_, index) => (
-                  <td className="fw-bold text-white align-middle" key={index}>
+                  <td className="fw-bold text-white " key={index}>
                     {allOrder?.price}
                   </td>
                 ))}
 
                 {Array.from({ length: 1 }).map((_, index) => (
-                  <td className="fw-bold text-white align-middle" key={index}>
+                  <td className="fw-bold text-white " key={index}>
                     {allOrder?.status}
                   </td>
                 ))}
                 {Array.from({ length: 1 }).map((_, index) => (
-                  <td key={index} className="align-middle">
+                  <td key={index} >
                     <button
                       onClick={() => deleteId(allOrder._id)}
                       className="mx-3 text-danger"

@@ -2,6 +2,8 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../../Hooks/useAuth';
 import './Reviews.css'
+import review from "./../../../images/undraw_for_review_eqxk.png";
+
 
 const Reviews = () => {
   const { user } = useAuth();
@@ -28,40 +30,58 @@ const Reviews = () => {
       });
   }
   return (
-    <div>
-      <h1 className="text-center">Give A Review</h1>
-      <div className="data-form my-5">
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <input
-           
-            className="p-2 m-2 w-25 text-center"
-            defaultValue={user?.displayName}
-            {...register("name")}
-          />
-          {/* Rating */}
-          <input
-            {...register("rating")}
-            placeholder="give a ratting"
-            className="p-2 m-2 w-25 text-center "
-            required
-          />
+    <div
+      className="container-fluid py-5"
+      style={{ backgroundColor: "#80d572" }}
+    >
+      <h1 className="pt-5 fw-bold" style={{ color: "#163336" }}>
+        Give your Review
+      </h1>
 
-          {/* description  */}
-          <textarea
-            {...register("comment")}
-            rows="5"
-            cols="15"
-            placeholder="Write a short note"
-            className="p-2 m-2 w-25 text-center "
-            required
-          />
+      <div className="row mx-auto py-5">
+        <div className="col-md-6 col-sm-12 align-self-center">
+          <img className="img-fluid w-75 rounded-3" src={review} alt="" />
+        </div>
 
-          <input
-            type="submit"
-            value="SEND"
-            className="fw-bold text-muted p-2 m-2 w-25 btn btn-outline-primary"
-          />
-        </form>
+        <div className="col-md-6 col-sm-12">
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <input
+              {...register("name")}
+              className="p-2 m-2 w-75 border border-white rounded-2"
+              defaultValue={user?.displayName}
+            />
+
+            <input
+              className="p-2 m-2 w-75 border border-white rounded-2"
+              placeholder="City"
+              defaultValue=""
+              {...register("city")}
+            />
+
+            <input
+              {...register("rating")}
+              className="p-2 m-2 w-75 border border-white rounded-2"
+              placeholder="Give your ratting 1-5"
+              required
+            />
+
+            <textarea
+              {...register("comment")}
+              rows="5"
+              cols="15"
+              className="p-2 m-2 w-75 border border-white rounded-2"
+              placeholder="Write your experience"
+              required
+            />
+
+            <input
+              type="submit"
+              value="Send"
+              className="btn w-75 rounded-2 text-white"
+              style={{ backgroundColor: "#163336" }}
+            />
+          </form>
+        </div>
       </div>
     </div>
   );

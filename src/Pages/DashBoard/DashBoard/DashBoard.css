@@ -1,19 +1,8 @@
-.list li {
-  list-style: none;
-  margin-top: 10px;
+.uses-btn{
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
 }
-
-.list a {
-  text-decoration: none;
-  text-align: start;
-  color: rgb(255, 255, 255);
-}
-
-.list a :hover {
-  background-color: rgb(40, 85, 87);
-  color: rgb(235, 227, 227);
-}
-.list {
-  background-color: rgb(10, 138, 155);
-  height: 100vh;
+.dashboard-container{
+  background-image: linear-gradient(to right, #556270 10%, #4ECDC4 100%);
 }

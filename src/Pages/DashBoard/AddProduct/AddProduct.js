@@ -23,14 +23,14 @@ const AddProduct = () => {
   };
   return (
     <div className=" add-container ">
-      <h1 className="text-center my-5 fw-bold text-dark">ADD A SERVICE</h1>
-      <div className="data-form my-5">
+      <h3 className="text-center text-dark text-white fw-bold">ADD A SERVICE</h3>
+      <div className="data-form">
         <form onSubmit={handleSubmit(onSubmit)}>
           {/* title */}
           <input
             {...register("name")}
             placeholder="add a Title"
-            className="p-2 m-2 w-50 text-center "
+            className="p-2 m-2 w-50 text-center"
             required
           />
 
