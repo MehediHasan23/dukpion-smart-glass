@@ -1,6 +1,8 @@
 import Button from "@restart/ui/esm/Button";
 import React from "react";
-import { Container, Nav, Navbar,  } from "react-bootstrap";
+import Fade from "react-reveal/Fade";
+
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 // import logo from "./../../../images/logo.png";
@@ -12,9 +14,11 @@ const Navigation = () => {
     <>
       <Navbar bg="light" expand="lg" sticky="top">
         <Container>
-          <Navbar.Brand as={Link} to="/">
-            <img className="img-fluid" src={logo2} alt="" />
-          </Navbar.Brand>
+          <Fade top>
+            <Navbar.Brand as={Link} to="/">
+              <img className="img-fluid" src={logo2} alt="" />
+            </Navbar.Brand>
+          </Fade>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mx-5 ms-auto  align-items-center">
@@ -42,14 +46,6 @@ const Navigation = () => {
 
               {!user?.email ? (
                 <>
-                  <Nav.Link
-                    className="fw-bold text-muted fw-bold fs-6"
-                    as={Link}
-                    to="/registration"
-                  >
-                    SIGN UP
-                  </Nav.Link>
-
                   <Nav.Link
                     className="fw-bold text-muted fw-bold fs-6"
                     as={Link}
