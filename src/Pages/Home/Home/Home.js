@@ -9,12 +9,12 @@ import FeaturedProducts from './../FeaturedProducts/FeaturedProducts'
 
 const Home = () => {
   return (
-    <div >
-      {/* <Banner /> */}
+    <div>
+      <Banner />
+      <Products />
+      <Review />
       <FeaturedProducts />
 
-      {/* <Products /> */}
-      {/* <Review /> */}
       {/* <AboutCollection /> */}
       {/* <KeepTouch/> */}
       <Services />
