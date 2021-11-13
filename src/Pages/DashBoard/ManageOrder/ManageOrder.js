@@ -3,6 +3,7 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
+import Swal from "sweetalert2";
 
 const ManageOrder = () => {
   const [allOrders, setAllOrders] = useState([]);
@@ -16,40 +17,68 @@ const ManageOrder = () => {
 
   //delete orders
   const deleteId = (id) => {
-    const proceed = window.confirm("you want to sure to delete");
-    if (proceed) {
-      const url = `https://boiling-caverns-07920.herokuapp.com/allOrder/${id}`;
-      fetch(url, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.deletedCount === 1) {
-            alert("delete successfully");
-            const remaining = allOrders.filter(
-              (allOrder) => allOrder._id !== id
-            );
-            setAllOrders(remaining);
-          }
-        });
-    }
+    // const proceed = window.confirm("you want to sure to delete");
+    // if (proceed) {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const url = `https://boiling-caverns-07920.herokuapp.com/allOrder/${id}`;
+        fetch(url, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount === 1) {
+              // alert("delete successfully");
+              const remaining = allOrders.filter(
+                (allOrder) => allOrder._id !== id
+              );
+              setAllOrders(remaining);
+            }
+          });
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      }
+    });
+
+    // }
   };
 
   //confirm status:
   const confirmID = (id) => {
-    const confirm = window.confirm("wanna confirm ?");
-    if (confirm) {
-      fetch(`https://boiling-caverns-07920.herokuapp.com/allOrder/${id}`, {
-        method: "PUT",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.modifiedCount === 1) {
-            alert("ordered confirmed");
-            setConfirm(!confirm);
-          }
-        });
-    }
+    Swal.fire({
+      title: "Are you sure?",
+      text: "Wanto To Confirm",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Confirm",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`https://boiling-caverns-07920.herokuapp.com/allOrder/${id}`, {
+          method: "PUT",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.modifiedCount === 1) {
+              setConfirm(!confirm);
+            }
+          });
+        Swal.fire("Confirmed", "Ordered Confirmed", "success");
+      }
+    });
+
+    // const confirm = window.confirm("wanna confirm ?");
+    // if (confirm) {
+
+    // }
   };
   return (
     <div className="admin-section  ">
@@ -131,7 +160,7 @@ const ManageOrder = () => {
                   </td>
                 ))}
                 {Array.from({ length: 1 }).map((_, index) => (
-                  <td key={index} >
+                  <td key={index}>
                     <button
                       onClick={() => deleteId(allOrder._id)}
                       className="mx-3 text-danger"

@@ -2,6 +2,7 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
+import Swal from "sweetalert2";
 import useAuth from "../../../Hooks/useAuth";
 
 const MyOrders = () => {
@@ -18,21 +19,30 @@ const MyOrders = () => {
 
   //delete order
   const deleteId = (id) => {
-    const proceed = window.confirm("you want to sure to delete");
-    if (proceed) {
-      const url = `https://boiling-caverns-07920.herokuapp.com/allOrder/${id}`;
-      fetch(url, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.deletedCount === 1) {
-            alert("Product deleted");
-            const remaining = lists.filter((list) => list._id !== id);
-            setLists(remaining);
-          }
-        });
-    }
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const url = `https://boiling-caverns-07920.herokuapp.com/allOrder/${id}`;
+        fetch(url, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount === 1) {
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+              const remaining = lists.filter((list) => list._id !== id);
+              setLists(remaining);
+            }
+          });
+      }
+    });
   };
 
   return (
@@ -83,7 +93,6 @@ const MyOrders = () => {
                   <td
                     style={{ textAlign: "center" }}
                     className="fw-bold text-light"
-                    
                     key={index}
                   >
                     {list.Name}

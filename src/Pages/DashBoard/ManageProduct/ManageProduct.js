@@ -2,6 +2,7 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect } from "react";
 import { Table } from "react-bootstrap";
+import Swal from "sweetalert2";
 
 const ManageProduct = () => {
   const [products, setProducts] = useState([]);
@@ -14,21 +15,36 @@ const ManageProduct = () => {
   //delete product
 
   const deleteProduct = (id) => {
-    const proceed = window.confirm("you want to sure to delete");
-    if (proceed) {
-      const url = `https://boiling-caverns-07920.herokuapp.com/products/${id}`;
-      fetch(url, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.deletedCount === 1) {
-            alert("delete successfully");
-            const remaining = products.filter((list) => list._id !== id);
-            setProducts(remaining);
-          }
-        });
-    }
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const url = `https://boiling-caverns-07920.herokuapp.com/products/${id}`;
+        fetch(url, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount === 1) {
+              // alert("delete successfully");
+              const remaining = products.filter((list) => list._id !== id);
+              setProducts(remaining);
+            }
+          });
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      }
+    });
+
+    // const proceed = window.confirm("you want to sure to delete");
+    // if (proceed) {
+
+    // }
   };
 
   console.log(products);
