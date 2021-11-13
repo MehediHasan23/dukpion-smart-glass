@@ -15,6 +15,7 @@ import MyOrders from "./Pages/DashBoard/MyOrders/MyOrders";
 import ManageOrder from "./Pages/DashBoard/ManageOrder/ManageOrder";
 import Collections from "./Pages/Collections/Collections/Collections";
 import AllReview from "./Pages/Home/AllReview/AllReview";
+import PageNotFound from "./Pages/PageNotFound/PageNotFound";
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
               <Home />
             </Route>
             <Route path="/more">
-              <AllReview/>
+              <AllReview />
             </Route>
             <Route path="/explorer">
               <Explorer />
@@ -51,6 +52,11 @@ function App() {
             <Route path="/collection">
               <Collections />
             </Route>
+            
+            <Route exact path="*">
+              <PageNotFound />
+            </Route>
+            
           </Switch>
           <Footer />
         </Router>
