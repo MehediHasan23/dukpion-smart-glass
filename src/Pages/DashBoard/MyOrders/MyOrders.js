@@ -16,29 +16,27 @@ const MyOrders = () => {
   }, [email]);
   console.log(lists);
 
-
   //delete order
-   const deleteId = (id) => {
-     const proceed = window.confirm("you want to sure to delete");
-     if (proceed) {
-       const url = `https://boiling-caverns-07920.herokuapp.com/allOrder/${id}`;
-       fetch(url, {
-         method: "DELETE",
-       })
-         .then((res) => res.json())
-         .then((data) => {
-           if (data.deletedCount === 1) {
-             alert("Product deleted");
-             const remaining = lists.filter((list) => list._id !== id);
-             setLists(remaining);
-           }
-         });
-     }
-   };
-
+  const deleteId = (id) => {
+    const proceed = window.confirm("you want to sure to delete");
+    if (proceed) {
+      const url = `https://boiling-caverns-07920.herokuapp.com/allOrder/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount === 1) {
+            alert("Product deleted");
+            const remaining = lists.filter((list) => list._id !== id);
+            setLists(remaining);
+          }
+        });
+    }
+  };
 
   return (
-    <div className="my-order-section p-5 bg-dark">
+    <div className="my-order-section ">
       <div className="text-center fw-bold text-white">
         <h1>REVIEW YOUR ORDERS</h1>
         <h4>TOTAL ORDERS: {lists.length}</h4>
@@ -49,7 +47,7 @@ const MyOrders = () => {
             <tr>
               {Array.from({ length: 1 }).map((_, index) => (
                 <th className="text-white" key={index}>
-                  BUYER
+                  Product Image
                 </th>
               ))}
 
@@ -82,33 +80,37 @@ const MyOrders = () => {
             <tbody>
               <tr>
                 {Array.from({ length: 1 }).map((_, index) => (
-                  <td className="fw-bold text-white" key={index}>
-                    {list?.Name}
+                  <td
+                    style={{ textAlign: "center" }}
+                    className="fw-bold"
+                    key={index}
+                  >
+                    <img className="w-25 rounded-pill" src={list.img} alt="" />
                   </td>
                 ))}
 
                 {Array.from({ length: 1 }).map((_, index) => (
-                  <td className="fw-bold text-white" key={index}>
+                  <td className="fw-bold text-white align-middle" key={index}>
                     {list?.name}
                   </td>
                 ))}
 
                 {Array.from({ length: 1 }).map((_, index) => (
-                  <td className="fw-bold text-white" key={index}>
+                  <td className="fw-bold text-white align-middle" key={index}>
                     {list?.price}
                   </td>
                 ))}
 
                 {Array.from({ length: 1 }).map((_, index) => (
-                  <td className="fw-bold text-white" key={index}>
+                  <td className="fw-bold text-white align-middle" key={index}>
                     {list?.status}
                   </td>
                 ))}
                 {Array.from({ length: 1 }).map((_, index) => (
-                  <td key={index}>
+                  <td key={index} className="align-middle">
                     <button
                       onClick={() => deleteId(list._id)}
-                      className="mx-3 text-danger"
+                      className="mx-3 text-danger "
                     >
                       <FontAwesomeIcon icon={faTrash} />
                     </button>

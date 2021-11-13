@@ -1,44 +1,39 @@
-import { faCheckCircle } from '@fortawesome/free-regular-svg-icons';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect, useState } from 'react';
-import { Table } from 'react-bootstrap';
-
-
-
-
-
+import { faCheckCircle } from "@fortawesome/free-regular-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useEffect, useState } from "react";
+import { Table } from "react-bootstrap";
 
 const ManageOrder = () => {
-const [allOrders, setAllOrders] = useState([]);
-const [confirm, setConfirm] = useState(true);
-useEffect(() => {
-  fetch("https://boiling-caverns-07920.herokuapp.com/allOrder")
-    .then((res) => res.json())
-    .then((data) => setAllOrders(data));
-}, [confirm]);
-  console.log(allOrders);
-  
-//delete orders
-const deleteId = (id) => {
-  const proceed = window.confirm("you want to sure to delete");
-  if (proceed) {
-    const url = `https://boiling-caverns-07920.herokuapp.com/allOrder/${id}`;
-    fetch(url, {
-      method: "DELETE",
-    })
+  const [allOrders, setAllOrders] = useState([]);
+  const [confirm, setConfirm] = useState(true);
+  useEffect(() => {
+    fetch("https://boiling-caverns-07920.herokuapp.com/allOrder")
       .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount === 1) {
-          alert("delete successfully");
-          const remaining = allOrders.filter((allOrder) => allOrder._id !== id);
-          setAllOrders(remaining);
-        }
-      });
-  }
-};
+      .then((data) => setAllOrders(data));
+  }, [confirm]);
+  console.log(allOrders);
 
-
+  //delete orders
+  const deleteId = (id) => {
+    const proceed = window.confirm("you want to sure to delete");
+    if (proceed) {
+      const url = `https://boiling-caverns-07920.herokuapp.com/allOrder/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount === 1) {
+            alert("delete successfully");
+            const remaining = allOrders.filter(
+              (allOrder) => allOrder._id !== id
+            );
+            setAllOrders(remaining);
+          }
+        });
+    }
+  };
 
   //confirm status:
   const confirmID = (id) => {
@@ -57,7 +52,7 @@ const deleteId = (id) => {
     }
   };
   return (
-    <div className="admin-section p-5 bg-dark">
+    <div className="admin-section  ">
       <div className="text-center fw-bold text-white">
         <h1 className="pt-3">MANAGE ORDERS</h1>
         <h4 className="pt-2 pb-2">TOTAL ORDERS: {allOrders.length}</h4>
@@ -75,7 +70,7 @@ const deleteId = (id) => {
               {Array.from({ length: 1 }).map((_, index) => (
                 <th className="text-white" key={index}>
                   {" "}
-                  PRODUCT NAME{" "}
+                  PRODUCT IMG{" "}
                 </th>
               ))}
 
@@ -106,30 +101,41 @@ const deleteId = (id) => {
             <tbody>
               <tr>
                 {Array.from({ length: 1 }).map((_, index) => (
-                  <td className="fw-bold text-white" key={index}>
+                  <td className="fw-bold text-white align-middle" key={index}>
                     {allOrder?.Name}
                   </td>
                 ))}
 
                 {Array.from({ length: 1 }).map((_, index) => (
-                  <td className="fw-bold text-white" key={index}>
-                    {allOrder?.name}
+                  // <td className="fw-bold text-white" key={index}>
+                  //   {allOrder?.name}
+                  // </td>
+                  <td
+                    style={{ textAlign: "center" }}
+                    className="fw-bold"
+                    key={index}
+                  >
+                    <img
+                      className="w-25 rounded-pill"
+                      src={allOrder?.img}
+                      alt=""
+                    />
                   </td>
                 ))}
 
                 {Array.from({ length: 1 }).map((_, index) => (
-                  <td className="fw-bold text-white" key={index}>
+                  <td className="fw-bold text-white align-middle" key={index}>
                     {allOrder?.price}
                   </td>
                 ))}
 
                 {Array.from({ length: 1 }).map((_, index) => (
-                  <td className="fw-bold text-white" key={index}>
+                  <td className="fw-bold text-white align-middle" key={index}>
                     {allOrder?.status}
                   </td>
                 ))}
                 {Array.from({ length: 1 }).map((_, index) => (
-                  <td key={index}>
+                  <td key={index} className="align-middle">
                     <button
                       onClick={() => deleteId(allOrder._id)}
                       className="mx-3 text-danger"
@@ -139,7 +145,7 @@ const deleteId = (id) => {
                   </td>
                 ))}
                 {Array.from({ length: 1 }).map((_, index) => (
-                  <td key={index}>
+                  <td key={index} className="align-middle">
                     <button
                       onClick={() => confirmID(allOrder._id)}
                       className="mx-3 text-success"

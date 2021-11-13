@@ -33,7 +33,7 @@ const ManageProduct = () => {
 
   console.log(products);
   return (
-    <div className="my-order-section p-5 bg-warning">
+    <div className="my-order-section ">
       <div className="text-center fw-bold text-white">
         <h1>Manage All Products</h1>
         <h4>Total Products: {products.length}</h4>

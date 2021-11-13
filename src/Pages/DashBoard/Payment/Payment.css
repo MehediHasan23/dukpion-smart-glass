@@ -1,0 +1,14 @@
+.payment {
+  background-image: linear-gradient(rgba(80, 79, 79, 0.5), rgba(0, 0, 0, 0.5)),
+    url(./../../../images/payment.png);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 !important;
+}
+.payment-title {
+  color: #fff;
+  font-size: 2.5em;
+  font-weight: 800;
+}

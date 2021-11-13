@@ -1,14 +1,20 @@
 import React from "react";
 import Banner from "../../Shared/Banner/Banner";
+import AboutCollection from "../AboutCollection/AboutCollection";
+import KeepTouch from "../KeepTouch/KeepTouch";
 import Products from "../Products/Products";
 import Review from "../Review/Review";
+import Services from "../Services/Services";
 
 const Home = () => {
   return (
-    <div>
+    <div style={{ background: "#D8E8EB" }}>
       <Banner />
       <Products />
       <Review />
+      {/* <AboutCollection /> */}
+      <KeepTouch/>
+      <Services />
     </div>
   );
 };
