@@ -1,5 +1,5 @@
 import { faPaypal } from "@fortawesome/free-brands-svg-icons";
-import { faSmileBeam } from "@fortawesome/free-regular-svg-icons";
+import { faCreditCard, faSmileBeam, faStar } from "@fortawesome/free-regular-svg-icons";
 import {
   faHome,
   faPlus,
@@ -25,28 +25,16 @@ import AdminRoute from "./../../Login/AdminRoute/AdminRoute";
 
 const DashBoard = () => {
   let { path, url } = useRouteMatch();
-  const { user, admin } = useAuth();
+  const { admin } = useAuth();
   return (
     <div className="container-fluid">
       <div className="row">
         <div
           style={{ minHeight: "80vh" }}
-          className="col-sm-12 col-md-6 col-lg-3 bg-dark text-white pt-5"
+          className="col-sm-12 col-md-6 col-lg-2 bg-dark text-white pt-5"
         >
           {/* accordion */}
           <div class="accordion" id="accordionExample">
-            <Link to="/">
-              <FontAwesomeIcon
-                className="fs-1 m-0 p-0 text-white mx-2"
-                icon={faHome}
-              ></FontAwesomeIcon>
-            </Link>
-            <Link to="/products">
-              <FontAwesomeIcon
-                className="fs-1 m-0 p-0 text-white mx-2"
-                icon={faStore}
-              ></FontAwesomeIcon>
-            </Link>
             {admin && (
               <div class="accordion-item mt-3">
                 <h2 class="accordion-header" id="headingOne">
@@ -57,9 +45,14 @@ const DashBoard = () => {
                     data-bs-target="#collapseOne"
                     aria-expanded="true"
                     aria-controls="collapseOne"
+                    text-dark
+                    fw-bold
                   >
-                    <FontAwesomeIcon icon={faUserLock} className="me-2" /> Admin
-                    Panel
+                    <FontAwesomeIcon
+                      icon={faUserLock}
+                      className="me-2 text-dark"
+                    />{" "}
+                    <span className="text-dark fw-bold">Admin Panel</span>
                   </button>
                 </h2>
                 <div
@@ -70,7 +63,7 @@ const DashBoard = () => {
                 >
                   <div class="accordion-body">
                     <Link
-                      className="text-decoration-none"
+                      className="text-decoration-none text-dark fw-bold"
                       to={`${url}/manageAllOrders`}
                     >
                       <li style={{ listStyle: "none" }} className="text-start">
@@ -78,9 +71,17 @@ const DashBoard = () => {
                         <FontAwesomeIcon icon={faTasks} /> Manage Orders
                       </li>
                     </Link>
-
                     <Link
-                      className="text-decoration-none"
+                      className="text-decoration-none text-dark fw-bold"
+                      to={`${url}/manageAllProducts`}
+                    >
+                      <li style={{ listStyle: "none" }} className="text-start">
+                        {" "}
+                        <FontAwesomeIcon icon={faTasks} /> Manage Products
+                      </li>
+                    </Link>
+                    <Link
+                      className="text-decoration-none text-dark fw-bold"
                       to={`${url}/addProduct`}
                     >
                       <li style={{ listStyle: "none" }} className="text-start">
@@ -90,32 +91,12 @@ const DashBoard = () => {
                     </Link>
 
                     <Link
-                      className="text-decoration-none"
+                      className="text-decoration-none text-dark fw-bold"
                       to={`${url}/makeAdmin`}
                     >
                       <li style={{ listStyle: "none" }} className="text-start">
                         {" "}
                         <FontAwesomeIcon icon={faUserLock} /> Make Admin
-                      </li>
-                    </Link>
-
-                    <Link
-                      className="text-decoration-none"
-                      to={`${url}/checkReviews`}
-                    >
-                      <li style={{ listStyle: "none" }} className="text-start">
-                        {" "}
-                        <FontAwesomeIcon icon={faSmileBeam} /> Check All Reviews
-                      </li>
-                    </Link>
-
-                    <Link
-                      className="text-decoration-none"
-                      to={`${url}/manageAllProducts`}
-                    >
-                      <li style={{ listStyle: "none" }} className="text-start">
-                        {" "}
-                        <FontAwesomeIcon icon={faTasks} /> Manage All Products
                       </li>
                     </Link>
                   </div>
@@ -131,9 +112,22 @@ const DashBoard = () => {
                   data-bs-target="#collapseTwo"
                   aria-expanded="false"
                   aria-controls="collapseTwo"
+                  text-dark
+                  fw-bold
                 >
-                  <FontAwesomeIcon icon={faUserCog} className="me-2" /> User
-                  Panel
+                  <FontAwesomeIcon
+                    icon={faUserCog}
+                    className="me-2 
+                    fw-bold
+                    text-dark
+                  "
+                  />{" "}
+                  <span
+                    className="text-dark
+                  fw-bold"
+                  >
+                    User Panel
+                  </span>
                 </button>
               </h2>
               <div
@@ -143,44 +137,46 @@ const DashBoard = () => {
                 data-bs-parent="#accordionExample"
               >
                 <div class="accordion-body">
-                  <Link className="text-decoration-none" to={`${url}`}>
-                    <li
-                      className="text-start fs-4"
-                      style={{ listStyle: "none" }}
-                    >
+                  <Link
+                    className="text-decoration-none text-dark fw-bold"
+                    to={`${url}`}
+                  >
+                    <li style={{ listStyle: "none" }} className="text-start">
                       {" "}
                       <FontAwesomeIcon
-                        className="fs-4"
                         icon={faShoppingCart}
                       ></FontAwesomeIcon>{" "}
                       My Order
                     </li>
                   </Link>
 
-                  <Link className="text-decoration-none" to={`${url}/payment`}>
-                    <li
-                      className="text-start fs-4"
-                      style={{ listStyle: "none" }}
-                    >
+                  <Link
+                    className="text-decoration-none text-dark fw-bold"
+                    to={`${url}/payment`}
+                  >
+                    <li style={{ listStyle: "none" }} className="text-start">
                       {" "}
                       <FontAwesomeIcon
-                        className="fs-4"
-                        icon={faPaypal}
+                        
+                        icon={faCreditCard}
                       ></FontAwesomeIcon>{" "}
                       Payment{" "}
                     </li>
                   </Link>
 
-                  <Link className="text-decoration-none" to={`${url}/review`}>
+                  <Link
+                    className="text-decoration-none text-dark fw-bold"
+                    to={`${url}/review`}
+                  >
                     <li
-                      className="text-start fs-4"
+                      className="text-start "
                       style={{ listStyle: "none" }}
                     >
                       <FontAwesomeIcon
-                        className="fs-4"
-                        icon={faSmileBeam}
-                      ></FontAwesomeIcon>
-                      Post A Review
+                        
+                        icon={faStar}
+                      ></FontAwesomeIcon> 
+                       Review
                     </li>
                   </Link>
                 </div>
@@ -191,7 +187,7 @@ const DashBoard = () => {
         </div>
         <div
           style={{ minHeight: "80vh" }}
-          className="bg-order-list col-sm-12 col-md-6 col-lg-9 bg-secondary pt-5 text-white "
+          className="bg-order-list col-sm-12 col-md-6 col-lg-10 bg-secondary pt-5 text-white "
         >
           <Switch>
             <Route exact path={path}>
