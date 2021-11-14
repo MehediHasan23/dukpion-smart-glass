@@ -13,6 +13,8 @@ import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import DashBoard from "./Pages/DashBoard/DashBoard/DashBoard";
 import MyOrders from "./Pages/DashBoard/MyOrders/MyOrders";
 import ManageOrder from "./Pages/DashBoard/ManageOrder/ManageOrder";
+import Collections from "./Pages/Collections/Collections/Collections";
+import AllReview from "./Pages/Home/AllReview/AllReview";
 
 function App() {
   return (
@@ -24,8 +26,11 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route  path="/home">
+            <Route path="/home">
               <Home />
+            </Route>
+            <Route path="/more">
+              <AllReview/>
             </Route>
             <Route path="/explorer">
               <Explorer />
@@ -34,18 +39,20 @@ function App() {
             <PrivateRoute exact path="/orderReplace/:id">
               <OrderReplace />
             </PrivateRoute>
-            <Route  path="/login">
+            <Route path="/login">
               <Login />
             </Route>
-            <Route  path="/registration">
+            <Route path="/registration">
               <Registration />
             </Route>
-            <Route  path="/dashboard">
+            <Route path="/dashboard">
               <DashBoard />
             </Route>
-            
+            <Route path="/collection">
+              <Collections />
+            </Route>
           </Switch>
-          {/* <Footer /> */}
+          <Footer />
         </Router>
       </AuthProvider>
     </div>

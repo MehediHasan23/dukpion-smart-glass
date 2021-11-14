@@ -1,6 +1,6 @@
 import Button from "@restart/ui/esm/Button";
 import React from "react";
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Nav, Navbar,  } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 // import logo from "./../../../images/logo.png";
@@ -32,6 +32,14 @@ const Navigation = () => {
               >
                 EXPLORER
               </Nav.Link>
+              <Nav.Link
+                className="fw-bold text-muted fw-bold fs-6"
+                as={Link}
+                to="/collection"
+              >
+                COLLECTIONS
+              </Nav.Link>
+
               {!user?.email ? (
                 <>
                   <Nav.Link
@@ -59,16 +67,12 @@ const Navigation = () => {
                   >
                     DASHBOARD
                   </Nav.Link>
-
-                  <NavDropdown>
-                    <div className="text-center">
-                      <h6>{user?.displayName}</h6>
-                      <p className="m-0 mb-2">{user?.email}</p>
-                      <button onClick={logOut} className="btn btn-primary">
-                        Sign Out
-                      </button>
-                    </div>
-                  </NavDropdown>
+                  <button
+                    className="border-0 fw-bold text-muted"
+                    onClick={logOut}
+                  >
+                    LOGOUT
+                  </button>
                 </>
               )}
             </Nav>

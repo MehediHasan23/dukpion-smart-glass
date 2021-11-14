@@ -1,5 +1,5 @@
 import React from "react";
-import './FeaturedProducts.css'
+import "./FeaturedProducts.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -40,16 +40,52 @@ const FeaturedProducts = () => {
     speed: 2000,
     autoplaySpeed: 1000,
     cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (
     <div className="container-fluid featured-products">
       <h1 className="text-center">
-        <span className="text-info">FEATURED</span> PRODUCTS
+        <span className="text-info">SPECIAL</span> OFFERS
       </h1>
       <h5 className="text-center fw-bold text-muted">Men's Collection</h5>
       <Slider {...settings} className="mt-5">
         <div className="border ">
-          <img className="img-fluid " src={pic1} alt="" />
+          <div className="glasses">
+            <img className="img-fluid " src={pic1} alt="" />
+            <div className="glass-content">
+              <h5>
+                <del>
+                  <small>৳ 950.00</small>
+                </del>{" "}
+                -22%
+              </h5>
+            </div>
+          </div>
           <div>
             <Rating
               readonly
@@ -65,7 +101,12 @@ const FeaturedProducts = () => {
           <button className="fw-bold btn btn-dark my-2">Add to cart</button>
         </div>
         <div className="border ">
-          <img className="img-fluid" src={pic11} alt="" />
+          <div className="glasses">
+            <img className="img-fluid " src={pic11} alt="" />
+            <div className="glass-content">
+              <h5>stock out</h5>
+            </div>
+          </div>
           <div>
             <Rating
               readonly
@@ -81,7 +122,17 @@ const FeaturedProducts = () => {
           <button className="fw-bold btn btn-dark my-2">Add to cart</button>
         </div>
         <div className="border ">
-          <img className="img-fluid" src={pic3} alt="" />
+          <div className="glasses">
+            <img className="img-fluid " src={pic3} alt="" />
+            <div className="glass-content">
+              <h5>
+                <del>
+                  <small>৳ 1150.00</small>
+                </del>{" "}
+                -20%
+              </h5>
+            </div>
+          </div>
           <div>
             <Rating
               readonly
@@ -93,11 +144,21 @@ const FeaturedProducts = () => {
             <span className="text-muted">( reviews 623)</span>
           </div>
           <h5>Vista Blackt</h5>
-          <p className="fw-bold text-muted">৳ 1150.00</p>
+          <p className="fw-bold text-muted">৳ 950.00</p>
           <button className="fw-bold btn btn-dark my-2">Add to cart</button>
         </div>
         <div className="border ">
-          <img className="img-fluid" src={pic4} alt="" />
+          <div className="glasses">
+            <img className="img-fluid " src={pic4} alt="" />
+            <div className="glass-content">
+              <h5>
+                <del>
+                  <small>৳ 1350.00</small>
+                </del>{" "}
+                -10%
+              </h5>
+            </div>
+          </div>
           <div>
             <Rating
               readonly
@@ -109,11 +170,21 @@ const FeaturedProducts = () => {
             <span className="text-muted">( reviews 1450)</span>
           </div>
           <h5>Evantikk Black</h5>
-          <p className="fw-bold text-muted">৳ 1350.00</p>
+          <p className="fw-bold text-muted">৳ 1250.00</p>
           <button className="fw-bold btn btn-dark my-2">Add to cart</button>
         </div>
         <div className="border ">
-          <img className="img-fluid" src={pic5} alt="" />
+          <div className="glasses">
+            <img className="img-fluid " src={pic5} alt="" />
+            <div className="glass-content">
+              <h5>
+                <del>
+                  <small>৳ 950.00</small>
+                </del>{" "}
+                -20%
+              </h5>
+            </div>
+          </div>
           <div>
             <Rating
               readonly
@@ -125,11 +196,16 @@ const FeaturedProducts = () => {
             <span className="text-muted">( reviews 1120)</span>
           </div>
           <h5>Explora Flip Black</h5>
-          <p className="fw-bold text-muted">৳ 950.00</p>
+          <p className="fw-bold text-muted">৳ 750.00</p>
           <button className="fw-bold btn btn-dark my-2">Add to cart</button>
         </div>
         <div className="border ">
-          <img className="img-fluid" src={pic6} alt="" />
+          <div className="glasses">
+            <img className="img-fluid " src={pic6} alt="" />
+            <div className="glass-content">
+              <h5>stock out</h5>
+            </div>
+          </div>
           <div>
             <Rating
               readonly
@@ -145,7 +221,17 @@ const FeaturedProducts = () => {
           <button className="fw-bold btn btn-dark my-2">Add to cart</button>
         </div>
         <div className="border ">
-          <img className="img-fluid" src={pic7} alt="" />
+          <div className="glasses">
+            <img className="img-fluid " src={pic7} alt="" />
+            <div className="glass-content">
+              <h5>
+                <del>
+                  <small>৳ 1450.00</small>
+                </del>{" "}
+                -10%
+              </h5>
+            </div>
+          </div>
           <div>
             <Rating
               readonly
@@ -157,11 +243,21 @@ const FeaturedProducts = () => {
             <span className="text-muted">( reviews 1523)</span>
           </div>
           <h5>Explora Flip Silver Grey</h5>
-          <p className="fw-bold text-muted">৳ 1450.00</p>
+          <p className="fw-bold text-muted">৳ 1350.00</p>
           <button className="fw-bold btn btn-dark my-2">Add to cart</button>
         </div>
         <div className="border ">
-          <img className="img-fluid" src={pic8} alt="" />
+          <div className="glasses">
+            <img className="img-fluid " src={pic8} alt="" />
+            <div className="glass-content">
+              <h5>
+                <del>
+                  <small>৳ 1350.00</small>
+                </del>{" "}
+                -22%
+              </h5>
+            </div>
+          </div>
           <div>
             <Rating
               readonly
@@ -177,7 +273,17 @@ const FeaturedProducts = () => {
           <button className="fw-bold btn btn-dark my-2">Add to cart</button>
         </div>
         <div className="border ">
-          <img className="img-fluid" src={pic9} alt="" />
+          <div className="glasses">
+            <img className="img-fluid " src={pic9} alt="" />
+            <div className="glass-content">
+              <h5>
+                <del>
+                  <small>৳ 1350.00</small>
+                </del>{" "}
+                -30%
+              </h5>
+            </div>
+          </div>
           <div>
             <Rating
               readonly
@@ -193,7 +299,17 @@ const FeaturedProducts = () => {
           <button className="fw-bold btn btn-dark my-2">Add to cart</button>
         </div>
         <div className="border ">
-          <img className="img-fluid" src={pic10} alt="" />
+          <div className="glasses">
+            <img className="img-fluid " src={pic10} alt="" />
+            <div className="glass-content">
+              <h5>
+                <del>
+                  <small>৳ 1350.00</small>
+                </del>{" "}
+                -10%
+              </h5>
+            </div>
+          </div>
           <div>
             <Rating
               readonly
@@ -217,7 +333,17 @@ const FeaturedProducts = () => {
       </h5>
       <Slider {...settings} className="mt-5">
         <div className="border ">
-          <img className="img-fluid" src={picw1} alt="" />
+          <div className="glasses">
+            <img className="img-fluid " src={picw1} alt="" />
+            <div className="glass-content">
+              <h5>
+                <del>
+                  <small>৳ 1250.00</small>
+                </del>{" "}
+                -10%
+              </h5>
+            </div>
+          </div>
           <div>
             <Rating
               readonly
@@ -229,11 +355,21 @@ const FeaturedProducts = () => {
             <span className="text-muted">( reviews 1123)</span>
           </div>
           <h5>Evantikk Red</h5>
-          <p className="fw-bold text-muted">৳ 1250.00</p>
+          <p className="fw-bold text-muted">৳ 1150.00</p>
           <button className="fw-bold btn btn-dark my-2">Add to cart</button>
         </div>
         <div className="border ">
-          <img className="img-fluid" src={picw2} alt="" />
+          <div className="glasses">
+            <img className="img-fluid " src={picw2} alt="" />
+            <div className="glass-content">
+              <h5>
+                <del>
+                  <small>৳ 1250.00</small>
+                </del>{" "}
+                -20%
+              </h5>
+            </div>
+          </div>
           <div>
             <Rating
               readonly
@@ -245,11 +381,21 @@ const FeaturedProducts = () => {
             <span className="text-muted">( reviews 1123)</span>
           </div>
           <h5>BUFORD BLUE MIRROR</h5>
-          <p className="fw-bold text-muted">৳ 1250.00</p>
+          <p className="fw-bold text-muted">৳ 1050.00</p>
           <button className="fw-bold btn btn-dark my-2">Add to cart</button>
         </div>
         <div className="border ">
-          <img className="img-fluid" src={picw3} alt="" />
+          <div className="glasses">
+            <img className="img-fluid " src={picw4} alt="" />
+            <div className="glass-content">
+              <h5>
+                <del>
+                  <small>৳ 1950.00</small>
+                </del>{" "}
+                -50%
+              </h5>
+            </div>
+          </div>
           <div>
             <Rating
               readonly
@@ -261,11 +407,21 @@ const FeaturedProducts = () => {
             <span className="text-muted">( reviews 1323)</span>
           </div>
           <h5>SOLAR GUN GREY</h5>
-          <p className="fw-bold text-muted">৳ 1950.00</p>
+          <p className="fw-bold text-muted">৳ 925.00</p>
           <button className="fw-bold btn btn-dark my-2">Add to cart</button>
         </div>
         <div className="border ">
-          <img className="img-fluid" src={picw4} alt="" />
+          <div className="glasses">
+            <img className="img-fluid " src={picw4} alt="" />
+            <div className="glass-content">
+              <h5>
+                <del>
+                  <small>৳ 550.00</small>
+                </del>{" "}
+                -10%
+              </h5>
+            </div>
+          </div>
           <div>
             <Rating
               readonly
@@ -277,11 +433,21 @@ const FeaturedProducts = () => {
             <span className="text-muted">( reviews 1223)</span>
           </div>
           <h5>Heritage Original</h5>
-          <p className="fw-bold text-muted">৳ 550.00</p>
+          <p className="fw-bold text-muted">৳ 450.00</p>
           <button className="fw-bold btn btn-dark my-2">Add to cart</button>
         </div>
         <div className="border ">
-          <img className="img-fluid" src={picw5} alt="" />
+          <div className="glasses">
+            <img className="img-fluid " src={picw5} alt="" />
+            <div className="glass-content">
+              <h5>
+                <del>
+                  <small>৳ 1350.00</small>
+                </del>{" "}
+                -15%
+              </h5>
+            </div>
+          </div>
           <div>
             <Rating
               readonly
@@ -290,14 +456,19 @@ const FeaturedProducts = () => {
               emptySymbol={<FontAwesomeIcon icon={emptyStar} />}
               fullSymbol={<FontAwesomeIcon icon={fullStar} />}
             />{" "}
-            <span className="text-muted">( reviews 1300)</span>
+            <span className="text-muted">( reviews 1200)</span>
           </div>
           <h5>STATESMAN BLACK</h5>
           <p className="fw-bold text-muted">৳ 1150.00</p>
           <button className="fw-bold btn btn-dark my-2">Add to cart</button>
         </div>
         <div className="border ">
-          <img className="img-fluid" src={picw6} alt="" />
+          <div className="glasses">
+            <img className="img-fluid " src={picw6} alt="" />
+            <div className="glass-content">
+              <h5>stock out</h5>
+            </div>
+          </div>
           <div>
             <Rating
               readonly
@@ -313,7 +484,17 @@ const FeaturedProducts = () => {
           <button className="fw-bold btn btn-dark my-2">Add to cart</button>
         </div>
         <div className="border ">
-          <img className="img-fluid" src={picw7} alt="" />
+          <div className="glasses">
+            <img className="img-fluid " src={picw7} alt="" />
+            <div className="glass-content">
+              <h5>
+                <del>
+                  <small>৳ 1950.00</small>
+                </del>{" "}
+                -20%
+              </h5>
+            </div>
+          </div>
           <div>
             <Rating
               readonly
@@ -325,11 +506,18 @@ const FeaturedProducts = () => {
             <span className="text-muted">( reviews 1123)</span>
           </div>
           <h5>PATTINSON LEOPARD</h5>
-          <p className="fw-bold text-muted">৳ 1950.00</p>
+          <p className="fw-bold text-muted">৳ 1530.00</p>
           <button className="fw-bold btn btn-dark my-2">Add to cart</button>
         </div>
         <div className="border ">
-          <img className="img-fluid" src={picw8} alt="" />
+          <div className="glasses">
+            <img className="img-fluid " src={picw8} alt="" />
+            <div className="glass-content">
+              <h5>
+                <small>৳ 1150.00</small>
+              </h5>
+            </div>
+          </div>
           <div>
             <Rating
               readonly
@@ -345,7 +533,17 @@ const FeaturedProducts = () => {
           <button className="fw-bold btn btn-dark my-2">Add to cart</button>
         </div>
         <div className="border ">
-          <img className="img-fluid" src={picw9} alt="" />
+          <div className="glasses">
+            <img className="img-fluid " src={picw9} alt="" />
+            <div className="glass-content">
+              <h5>
+                <del>
+                  <small>৳ 550.00</small>
+                </del>{" "}
+                -10%
+              </h5>
+            </div>
+          </div>
           <div>
             <Rating
               readonly
@@ -357,11 +555,21 @@ const FeaturedProducts = () => {
             <span className="text-muted">( reviews 1123)</span>
           </div>
           <h5>BUFORD BLUE MIRROR</h5>
-          <p className="fw-bold text-muted">৳ 550.00</p>
+          <p className="fw-bold text-muted">৳ 470.00</p>
           <button className="fw-bold btn btn-dark my-2">Add to cart</button>
         </div>
         <div className="border ">
-          <img className="img-fluid" src={picw10} alt="" />
+          <div className="glasses">
+            <img className="img-fluid " src={picw10} alt="" />
+            <div className="glass-content">
+              <h5>
+                <del>
+                  <small>৳ 1350.00</small>
+                </del>{" "}
+                -30%
+              </h5>
+            </div>
+          </div>
           <div>
             <Rating
               readonly

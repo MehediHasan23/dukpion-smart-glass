@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import './Product.css'
+import "./Product.css";
 
 import { faStar as emptyStar } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,14 +9,21 @@ import { Link } from "react-router-dom";
 import Rating from "react-rating";
 const Product = (props) => {
   // console.log(props);
-  const { name, img, rating, ratingCount,modelNumber, variant, price, _id } = props.product;
+  const { name, img, rating, ratingCount, modelNumber, variant, price, _id } =
+    props.product;
   return (
     <div className="col-sm-12 col-md-6 col-lg-4">
       <div
         className="card mx-auto  border border-3 rounded-5 m-2 testimonial-card"
         style={{ width: "18rem" }}
       >
-        <img src={img} className="card-img-top img-fluid " alt="..." />
+        <div className="glasses">
+          <img src={img} className="card-img-top img-fluid " alt="..." />
+          <div className="glass-content">
+            <small className='fw-bold'>Hot sell</small>
+          </div>
+        </div>
+
         <div className="card-body text-start m-0">
           <h5 className="card-title fw-bold text-muted">{name}</h5>
           <div className="text-start">

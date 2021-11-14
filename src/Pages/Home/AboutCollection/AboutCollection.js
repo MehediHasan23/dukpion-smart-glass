@@ -7,7 +7,7 @@ import about from "./../../../images/about/DONOVO-TRANSPARENT-MODEL.jpg";
 
 const AboutCollection = () => {
   return (
-    <Container className="mt-5 p-5">
+    <Container className="mt-5 p-5 bg-light shadow rounded" >
       <div className="row">
         <div className="col-sm-12 col-md-12 col-lg-5">
           <img className="img-fluid" src={about} alt="" />

@@ -9,7 +9,7 @@ import security from "./../../../images/about/credit-card-secure-Checkout-Lunett
 const Services = () => {
   return (
     <>
-      <div className="bg-dark py-5 service-container">
+      <div className="bg-dark py-5 service-container rounded">
         <h3 className="text-center text-light">OUR SERVICES</h3>
       </div>
       <Container className="service-section pb-5">
